@@ -1,52 +1,55 @@
 import React from 'react'
+import {useState} from 'react';
 import Head from 'next/head'
 import Nav from '../components/nav'
+import SearchBar from '../components/search-bar';
+import WeatherList from '../components/weather-list';
 
-const Home = () => (
+const axios = require('axios');
+
+const getWeatherForCity = (city, setWeather) => {
+    axios.get('/api/weather', {params: {city: city}}).then((res) => {
+      let weather = res.data;
+      console.log(weather);
+      setWeather([weather]);
+
+      }).catch((err) => {
+        console.log(err);
+      });
+};
+
+const Home = () => {
+  let [weather, setWeather] = useState();
+
+return (
   <div>
     <Head>
-      <title>Home</title>
+      <title>Weather App</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <Nav />
-
-    <div className="hero">
-      <h1 className="title">Welcome to Next.js!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className="row">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
-      </div>
+    <div className="container">
+      <h1 className="title">Search for weather by city name</h1>
+      <SearchBar handleSubmit={(city) => { getWeatherForCity(city, setWeather); }} />
+      <WeatherList weatherData={weather}/>
     </div>
 
+
     <style jsx>{`
-      .hero {
+      .container {
+        max-width: 720px;
         width: 100%;
+        margin-left: auto;
+        margin-right: auto;
         color: #333;
       }
       .title {
-        margin: 0;
+        margin-bottom: 32px;
         width: 100%;
         padding-top: 80px;
         line-height: 1.15;
-        font-size: 48px;
+        font-size: 40px;
       }
       .title,
       .description {
@@ -83,6 +86,6 @@ const Home = () => (
       }
     `}</style>
   </div>
-)
-
+  );
+}
 export default Home
