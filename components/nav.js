@@ -11,18 +11,6 @@ const links = [
 
 const Nav = () => (
   <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
 
     <style jsx>{`
       :global(body) {
@@ -32,22 +20,9 @@ const Nav = () => (
       }
       nav {
         text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
+        height: 120px;
+        background: rgb(0,46,30);
+        background: linear-gradient(317deg, rgba(28,138,130,1) 0%, rgba(64,207,198,1) 100%);
       }
     `}</style>
   </nav>

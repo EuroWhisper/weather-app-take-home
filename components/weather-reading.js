@@ -1,5 +1,4 @@
 const WeatherReading = (props) => {
-    console.log(props.location);
     return (
         <div>
             <div className="weather-reading">
@@ -12,7 +11,7 @@ const WeatherReading = (props) => {
             </div>
             <style jsx>{`
                 .weather-reading {
-                    margin: 48px 0px 24px 0px;
+                    margin-bottom: 24px;
                     display: flex;
                     box-sizing: border-box;
                     padding: 40px;

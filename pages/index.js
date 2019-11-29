@@ -7,19 +7,21 @@ import WeatherList from '../components/weather-list';
 
 const axios = require('axios');
 
-const getWeatherForCity = (city, setWeather) => {
-    axios.get('/api/weather', {params: {city: city}}).then((res) => {
-      let weather = res.data;
-      console.log(weather);
-      setWeather([weather]);
 
+
+const Home = () => {
+  let [weather, setWeather] = useState([]);
+
+  const getWeatherForCity = (city) => {
+    axios.get('/api/weather', {params: {city: city}}).then((res) => {
+      let fetchedWeather = res.data;
+      const newWeather = [...weather];
+      newWeather.unshift(fetchedWeather);
+      setWeather(newWeather);
       }).catch((err) => {
         console.log(err);
       });
 };
-
-const Home = () => {
-  let [weather, setWeather] = useState();
 
 return (
   <div>

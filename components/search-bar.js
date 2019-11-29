@@ -10,8 +10,9 @@ const SearchBar = (props) => {
                 <input className="submit" type="submit" value="Add City" />
             </form>
             <style jsx>{`
-            .searchBar {
+            .search-bar {
                 display: flex;
+                margin-bottom: 32px;
             }
             input {
                 height: 48px;
