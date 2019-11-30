@@ -1,24 +1,26 @@
 import React from 'react'
-import Link from 'next/link'
-
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
 
 const Nav = () => (
   <nav>
-
+    <h1>Weather By City</h1>
     <style jsx>{`
       :global(body) {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
           Helvetica, sans-serif;
       }
+
+      h1, h2, h3, h4, h5 {
+        margin: 0;
+      }
+
+      h1 {
+        color: white;
+        font-size: 32px;
+      }
       nav {
+        display: flex;
+        align-items: center;
         text-align: center;
         height: 120px;
         background: rgb(0,46,30);

@@ -4,20 +4,23 @@ import Head from 'next/head'
 import Nav from '../components/nav'
 import SearchBar from '../components/search-bar';
 import WeatherList from '../components/weather-list';
+import {isCityWeatherListed} from '../weather-util';
 
 const axios = require('axios');
 
 
 
 const Home = () => {
-  let [weather, setWeather] = useState([]);
+  let [weatherData, setWeatherData] = useState([]);
 
   const getWeatherForCity = (city) => {
     axios.get('/api/weather', {params: {city: city}}).then((res) => {
       let fetchedWeather = res.data;
-      const newWeather = [...weather];
-      newWeather.unshift(fetchedWeather);
-      setWeather(newWeather);
+      if (!isCityWeatherListed(fetchedWeather, weatherData)) {
+        const newWeather = [...weatherData];
+        newWeather.unshift(fetchedWeather);
+        setWeatherData(newWeather);
+      }
       }).catch((err) => {
         console.log(err);
       });
@@ -33,8 +36,8 @@ return (
     <Nav />
     <div className="container">
       <h1 className="title">Search for weather by city name</h1>
-      <SearchBar handleSubmit={(city) => { getWeatherForCity(city, setWeather); }} />
-      <WeatherList weatherData={weather}/>
+      <SearchBar handleSubmit={(city) => { getWeatherForCity(city); }} />
+      <WeatherList weatherData={weatherData}/>
     </div>
 
 

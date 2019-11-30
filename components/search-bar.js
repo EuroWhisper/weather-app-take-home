@@ -19,6 +19,7 @@ const SearchBar = (props) => {
                 box-sizing: border-box;
             }
             .search {
+                font-size: 16px;
                 border-color: #B2B2B2;
                 border-style: solid;
                 border-width: 1px;
