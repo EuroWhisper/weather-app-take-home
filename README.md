@@ -2,6 +2,9 @@
 
 Hello! This is the source for my Weather App take-home project.
 
+The live app can be viewed [here](https://laurence-weather-app.herokuapp.com/)
+It is hosted on a free Heroku account, so may take 10-20 seconds to load. I apologize for any inconvenience. =)
+
 **Bonus features:**
 I made it so that the user can continuously search for weather readings and have each reading displayed in a list, whilst also preventing duplicates (if you search for the same city twice, it will not display the city's data twice).
 I added a button that clears all displayed weather readings (the button is only rendered when there are weather readings to show).
