@@ -47,6 +47,7 @@ return (
         color: #333;
       }
       .title {
+        font-weight: normal;
         margin-bottom: 32px;
         width: 100%;
         padding-top: 80px;
