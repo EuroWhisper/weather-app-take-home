@@ -1,3 +1,5 @@
+// WeatherReading is a component that displays weather data
+// for a single city.
 const WeatherReading = (props) => {
     return (
         <div>

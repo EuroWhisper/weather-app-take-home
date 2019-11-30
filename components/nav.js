@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Nav is the app's header/navigation component.
 const Nav = () => (
   <nav>
     <h1>Weather By City</h1>

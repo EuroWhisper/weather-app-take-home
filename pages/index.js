@@ -9,20 +9,31 @@ import {isCityWeatherListed} from '../weather-util';
 const axios = require('axios');
 
 
-
+// Home is a component representing the only page of the application.
 const Home = () => {
+  // WeatherData is an array of weather readings for various cities.
   let [weatherData, setWeatherData] = useState([]);
 
+  // Fetch the weather reading for a given city.
   const getWeatherForCity = (city) => {
+    // Send a GET request to our API, to retrieve the reading.
     axios.get('/api/weather', {params: {city: city}}).then((res) => {
       let fetchedWeather = res.data;
+      // If there is not already a weather reading for the city
+      // add it to the array of weather readings to be displayed.
       if (!isCityWeatherListed(fetchedWeather, weatherData)) {
+        // Create a copy of the weatherData array.
         const newWeather = [...weatherData];
+        // Prepend the latest fetched weather reading to the new array
+        // (so that it will be displayed at the top of the list).
         newWeather.unshift(fetchedWeather);
+        // Replace the old weatherData with the new weather data array.
         setWeatherData(newWeather);
       }
+      // If something went wrong
       }).catch((err) => {
-        console.log(err);
+        // Display a warning to the user.
+        window.alert("Unfortunately, the weather reading for the input city could not be retrieved. Please try again.")
       });
 };
 
@@ -30,7 +41,6 @@ return (
   <div>
     <Head>
       <title>Weather App</title>
-      <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <Nav />
@@ -60,35 +70,6 @@ return (
       .title,
       .description {
         text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
       }
     `}</style>
   </div>
