@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Nav from '../components/nav'
 import SearchBar from '../components/search-bar';
 import WeatherList from '../components/weather-list';
+import ClearWeatherDataButton from '../components/clear-weather-data-button';
 import {isCityWeatherListed} from '../weather-util';
 
 const axios = require('axios');
@@ -13,6 +14,10 @@ const axios = require('axios');
 const Home = () => {
   // WeatherData is an array of weather readings for various cities.
   let [weatherData, setWeatherData] = useState([]);
+
+  const clearWeatherData = () => {
+    setWeatherData([]);
+  };
 
   // Fetch the weather reading for a given city.
   const getWeatherForCity = (city) => {
@@ -48,6 +53,7 @@ return (
       <h1 className="title">Search for weather by city name</h1>
       <SearchBar handleSubmit={(city) => { getWeatherForCity(city); }} />
       <WeatherList weatherData={weatherData}/>
+      <ClearWeatherDataButton weatherDataLength={weatherData.length} handleClick={clearWeatherData} />
     </div>
 
 
