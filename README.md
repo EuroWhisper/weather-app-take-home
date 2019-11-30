@@ -4,6 +4,7 @@ Hello! This is the source for my Weather App take-home project.
 
 **Bonus features:**
 I made it so that the user can continuously search for weather readings and have each reading displayed in a list, whilst also preventing duplicates (if you search for the same city twice, it will not display the city's data twice).
+I added a button that clears all displayed weather readings (the button is only rendered when there are weather readings to show).
 I created a simple REST API consisting of just one route, to fetch data from OpenWeatherMap's API.
 
 **Please note:**

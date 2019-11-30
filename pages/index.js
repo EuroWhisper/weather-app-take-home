@@ -15,6 +15,7 @@ const Home = () => {
   // WeatherData is an array of weather readings for various cities.
   let [weatherData, setWeatherData] = useState([]);
 
+  //  Wipe all weather readings from the weather data array.
   const clearWeatherData = () => {
     setWeatherData([]);
   };

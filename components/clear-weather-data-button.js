@@ -1,4 +1,8 @@
+// ClearWeatherDataButton is a component that displays a button
+// that deletes all of the weather readings when pressed.
 const ClearWeatherDataButton = (props) => {
+    // Display the button if there is at least one weather reading
+    // being displayed.
     if (props.weatherDataLength > 0) {
         return (
         <div>
