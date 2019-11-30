@@ -1,4 +1,4 @@
-#Weather App
+# Weather App
 
 Hello! This is the source for my Weather App take-home project.
 
