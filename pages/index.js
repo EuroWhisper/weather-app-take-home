@@ -84,6 +84,11 @@ return (
           padding: 16px;
           box-sizing: border-box;
         }
+
+        .title {
+          padding-top: 40px;
+          margin: 0 0 32px 0;
+        }
       }
     `}</style>
   </div>
