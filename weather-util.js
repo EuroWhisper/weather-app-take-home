@@ -1,5 +1,3 @@
-import WeatherReading from "./components/weather-reading";
-
 // Round the temperature reading to the nearest whole number
 // and convert it to a string appended with '°C'.
 export const formatTemperature = (temp) => {

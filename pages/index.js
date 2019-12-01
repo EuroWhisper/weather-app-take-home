@@ -9,7 +9,6 @@ import {isCityWeatherListed} from '../weather-util';
 
 const axios = require('axios');
 
-
 // Home is a component representing the only page of the application.
 const Home = () => {
   // WeatherData is an array of weather readings for various cities.
@@ -56,8 +55,7 @@ return (
       <WeatherList weatherData={weatherData}/>
       <ClearWeatherDataButton weatherDataLength={weatherData.length} handleClick={clearWeatherData} />
     </div>
-
-
+    
     <style jsx>{`
       .container {
         max-width: 720px;
@@ -66,6 +64,7 @@ return (
         margin-right: auto;
         color: #333;
       }
+
       .title {
         font-weight: normal;
         margin-bottom: 32px;
@@ -74,8 +73,8 @@ return (
         line-height: 1.15;
         font-size: 40px;
       }
-      .title,
-      .description {
+
+      .title, .description {
         text-align: center;
       }
 
@@ -94,4 +93,4 @@ return (
   </div>
   );
 }
-export default Home
+export default Home;

@@ -1,7 +1,6 @@
 import {useState} from 'react';
 
-// Search bar is a component representing the
-// city search form.
+// Search bar is a component representing the city search form.
 const SearchBar = (props) => {
     // searchValue holds the value of the search input element.
     let [searchValue, setSearchValue] = useState('');

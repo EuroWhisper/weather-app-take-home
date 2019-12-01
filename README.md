@@ -14,6 +14,7 @@ It is hosted on a free Heroku account, so may take 10-20 seconds to load. I apol
 
 **Please note:**
 - I decided to use NextJS for the app, because I saw that it is used in the workplace, comes with a CSS in JS solution which I realize is a requirement for this take-home project and also allows for quick/simple API creation.
+- I am not sure if raw promises or async/await is preferred in the workplace, so I used async/await in my API and a raw promise on the client-side to show understanding of both approaches.
 - I apologize for using window.alert() to display errors for bad input/failed get requests, I unfortunately did not have time to implement a dialog system (or loading spinners).
 - I opted to use functional components with the useState hook instead of class components, as I saw that this is the workplace's preference.
 
