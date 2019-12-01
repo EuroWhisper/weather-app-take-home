@@ -20,9 +20,9 @@ const SearchBar = (props) => {
             input {
                 height: 48px;
                 box-sizing: border-box;
+                font-size: 16px;
             }
             .search {
-                font-size: 16px;
                 border-color: #B2B2B2;
                 border-style: solid;
                 border-width: 1px;
@@ -33,7 +33,21 @@ const SearchBar = (props) => {
                 background-color: #4D9B96;
                 color: white;
                 border-style: none;
-                width: 15%;
+                min-width: 128px;
+            }
+
+            @media(max-width: 480px) {
+                .search-bar {
+                    flex-direction: column;
+                }
+
+                .search, .submit {
+                    width: 100%;
+                }
+
+                .search {
+                    margin-bottom: 8px;
+                }
             }
             `}
             </style>

@@ -28,6 +28,17 @@ const WeatherReading = (props) => {
                 .weather-info {
                     margin-left: 48px;
                 }
+
+                @media(max-width: 480px) {
+                    .weather-reading {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .weather-info {
+                        margin: 0;
+                    }
+                }
             `}</style>
         </div>
     );

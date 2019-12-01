@@ -20,6 +20,8 @@ const Nav = () => (
         font-size: 32px;
       }
       nav {
+        padding: 40px;
+        box-sizing: border-box;
         display: flex;
         align-items: center;
         text-align: center;

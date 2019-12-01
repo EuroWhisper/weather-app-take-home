@@ -78,6 +78,13 @@ return (
       .description {
         text-align: center;
       }
+
+      @media(max-width: 768px) {
+        .container {
+          padding: 16px;
+          box-sizing: border-box;
+        }
+      }
     `}</style>
   </div>
   );

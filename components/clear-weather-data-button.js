@@ -16,6 +16,11 @@ const ClearWeatherDataButton = (props) => {
                     border-style: none;
                     width: 256px;
                 }
+                @media(max-width: 480px) {
+                    button {
+                        width: 100%;
+                    }
+                }
             `}</style>
         </div>
         );
